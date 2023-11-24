@@ -1,0 +1,76 @@
+https://github.com/CG-Nov-2023/
+
+steps to install angular and create an angular project
+------------------------------------------------------
+1) install nodejs - choose LTS
+2) this will give you npm (node package manager)
+3) using npm we will install angular cli
+4) open a cmd and type the command
+	npm install -g @angular/cli
+5) to confirm if angular is installed type the command
+	ng version
+6) next create a angular project
+	ng new --no-standalone ang-demo
+		Choose CSS	
+		Choose N for server side rendering
+
+steps to create a component
+----------------------------
+1. use the command 
+	ng generate component <component name>
+	eg.
+		ng generate component display
+2. this will create a folder called display in app folder
+     and will create the 4 files
+		display.component.ts
+		display.component.html
+		display.component.css
+		display.component.spec.ts
+3. Also entry of DisplayComponent will be made in app.module.ts file
+4. dont forget to use the selector of the component
+
+
+https://github.com/CG-Nov-2023/
+
+steps to install angular and create an angular project
+------------------------------------------------------
+1) install nodejs - choose LTS
+2) this will give you npm (node package manager)
+3) using npm we will install angular cli
+4) open a cmd and type the command
+	npm install -g @angular/cli
+5) to confirm if angular is installed type the command
+	ng version
+6) next create a angular project
+	ng new --no-standalone ang-demo
+		Choose CSS	
+		Choose N for server side rendering
+
+steps to create a component
+----------------------------
+1. use the command 
+	ng generate component <component name> 
+	eg.
+		ng generate component display
+        (or)
+        ng g c display
+2. this will create a folder called display in app folder
+     and will create the 4 files
+		display.component.ts
+		display.component.html
+		display.component.css
+		display.component.spec.ts
+3. Also entry of DisplayComponent will be made in app.module.ts file automatically
+4. Dont forget to use the selector of the newly created component
+
+property and event binding
+-------------------------
+1) String Interpolation - {{ }}
+                        - one way binding
+2) Property binding - [ ]
+                    - one way binding
+3) Event binding - ( )
+                 - one way binding
+4) Property binding - [(ngModel)]
+                    - two way binding
+
