@@ -1,0 +1,19 @@
+<div>
+    <p>{{ text1 }}</p>
+    <p>{{ text1 | uppercase }}</p>
+    <p>{{ text2 }}</p>
+    <p>{{ text2 | lowercase }}</p>
+    <p>{{ text2 | titlecase }}</p>
+    <p>{{ todaysDate }}</p>
+    <p>{{ todaysDate | date}}</p>
+    <p>{{ todaysDate | date: 'shortDate'}}</p>
+    <p>{{ todaysDate | date: 'dd/MM/YYYY'}}</p>
+    <p>{{ marks }}</p>
+    <p>{{ marks/500 | percent }}</p>
+    <p>{{ amount  }}</p>
+    <p>{{ amount | number:'3.0-2' }}</p>
+    <p>{{ bookCost }}</p>
+    <p>{{ bookCost | currency }}</p>
+    <p>{{ bookCost | currency:'INR'}}</p>
+    <p>{{ bookCost | currency: 'EUR':'symbol'}}</p>
+</div>

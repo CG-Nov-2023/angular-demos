@@ -8,6 +8,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FormsModule } from '@angular/forms';
 import { RainbowColorComponent } from './rainbow-color/rainbow-color.component';
 import { BookListComponent } from './books/book-list/book-list.component';
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BookListComponent } from './books/book-list/book-list.component';
     DisplayComponent,
     CounterComponent,
     RainbowColorComponent,
-    BookListComponent
+    BookListComponent,
+    PipesDemoComponent
   ],
   imports: [
     BrowserModule,
