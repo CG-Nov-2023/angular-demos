@@ -12,4 +12,5 @@ export class PipesDemoComponent {
   marks: number = 455;
   amount: number = 300.67345;
   bookCost: number = 350;
+  text3: string = "this string is split using custom pipe";
 }

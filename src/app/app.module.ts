@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { RainbowColorComponent } from './rainbow-color/rainbow-color.component';
 import { BookListComponent } from './books/book-list/book-list.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
+import { SplitPipePipe } from './pipes-demo/custom-pipe/split-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
     CounterComponent,
     RainbowColorComponent,
     BookListComponent,
-    PipesDemoComponent
+    PipesDemoComponent,
+    SplitPipePipe
   ],
   imports: [
     BrowserModule,
