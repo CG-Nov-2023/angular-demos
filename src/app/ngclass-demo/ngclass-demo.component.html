@@ -1,0 +1,8 @@
+<div class="container">
+    <h2>NGCLASS DEMO COMPONENT</h2>
+    <ul class = "list-group">
+        <li *ngFor="let eachStudent of allStudents" class = "list-group-item">
+            <p [ngClass]="eachStudent.studMark>35 ?(eachStudent.studMark>50?'bg-success':'bg-warning'):'bg-danger'">{{ eachStudent.studId }} - {{ eachStudent.studName }} - {{ eachStudent.studMark }}</p>
+        </li>
+    </ul>
+</div>

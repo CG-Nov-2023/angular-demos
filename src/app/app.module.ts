@@ -12,6 +12,7 @@ import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { SplitPipePipe } from './pipes-demo/custom-pipe/split-pipe.pipe';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ToDoItemComponent } from './to-do-list/to-do-item/to-do-item.component';
+import { NgclassDemoComponent } from './ngclass-demo/ngclass-demo.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ToDoItemComponent } from './to-do-list/to-do-item/to-do-item.component'
     PipesDemoComponent,
     SplitPipePipe,
     ToDoListComponent,
-    ToDoItemComponent
+    ToDoItemComponent,
+    NgclassDemoComponent
   ],
   imports: [
     BrowserModule,

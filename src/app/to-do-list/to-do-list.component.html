@@ -8,16 +8,19 @@
             [(ngModel)]="newTask" 
             (change)="addToTasks()">
     </div>
-    <ul *ngFor="let eachTodo of allToDos ">
-        <!-- <li>
+    <ul>
+        <!--<li>
             {{ eachTodo.todoTask }} 
             <button 
                 type="button" 
                 class="btn btn-danger" 
                 (click)="removeTask(eachTodo.todoId)">Done</button>
         </li> -->
-        <to-do-item 
+        <li *ngFor="let eachTodo of allToDos ">
+            <to-do-item 
             [todoItem]="eachTodo" 
             (notifyDone)="removeTask($event)"></to-do-item>
+        </li>
+        
     </ul>
 </div>
