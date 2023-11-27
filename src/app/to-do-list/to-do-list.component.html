@@ -1,0 +1,23 @@
+<div class="container m-5">
+    <h2>TODO COMPONENT</h2>
+    <div class="form-group">
+        <input 
+            type="text" 
+            class="form-control"
+            placeholder="Enter Task"
+            [(ngModel)]="newTask" 
+            (change)="addToTasks()">
+    </div>
+    <ul *ngFor="let eachTodo of allToDos ">
+        <!-- <li>
+            {{ eachTodo.todoTask }} 
+            <button 
+                type="button" 
+                class="btn btn-danger" 
+                (click)="removeTask(eachTodo.todoId)">Done</button>
+        </li> -->
+        <to-do-item 
+            [todoItem]="eachTodo" 
+            (notifyDone)="removeTask($event)"></to-do-item>
+    </ul>
+</div>

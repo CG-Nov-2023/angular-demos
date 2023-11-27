@@ -10,6 +10,8 @@ import { RainbowColorComponent } from './rainbow-color/rainbow-color.component';
 import { BookListComponent } from './books/book-list/book-list.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { SplitPipePipe } from './pipes-demo/custom-pipe/split-pipe.pipe';
+import { ToDoListComponent } from './to-do-list/to-do-list.component';
+import { ToDoItemComponent } from './to-do-list/to-do-item/to-do-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { SplitPipePipe } from './pipes-demo/custom-pipe/split-pipe.pipe';
     RainbowColorComponent,
     BookListComponent,
     PipesDemoComponent,
-    SplitPipePipe
+    SplitPipePipe,
+    ToDoListComponent,
+    ToDoItemComponent
   ],
   imports: [
     BrowserModule,
