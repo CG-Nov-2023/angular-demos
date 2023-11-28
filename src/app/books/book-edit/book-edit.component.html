@@ -1,1 +1,81 @@
-<p>book-edit works!</p>
+<div class="container">
+    <div class="row" #temp1>
+        <div class="col-3"></div>
+        <div class="col-6">
+            <form [formGroup]="myReactiveForm" (ngSubmit)="editBook()">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h2>EDIT A BOOK</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="bTitle">Book Title</label>
+                            <input 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Enter Book Title" 
+                                id="bTitle"
+                                formControlName="bookTitle"
+                               >
+                               <div *ngIf="myReactiveForm.get('bookTitle')?.invalid && myReactiveForm.get('bookTitle')?.touched"  class="text-danger small">
+                                    <div *ngIf="myReactiveForm.get('bookTitle')?.errors?.['required']">Book Title is mandatory!</div>
+                                    <div  *ngIf="myReactiveForm.get('bookTitle')?.errors?.['minlength']">Book Title should be atleast 3 characters!</div>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bAuthor">Book Author</label>
+                            <select class="form-control" id="bAuthor" formControlName="bookAuthor">
+                                <option value="J.K.Rowling">J.K.Rowling</option>
+                                <option value="Geronimo Stilton">Geronimo Stilton</option>
+                                <option value="Enid Blyton">Enid Blyton</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bGenre">Book Genre</label>
+                            <select class="form-control" id="bGenre" formControlName="bookGenre">
+                                <option value="Fiction">Fiction</option>
+                                <option value="Comedy">Comedy</option>
+                                <option value="Fantasy">Fantasy</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bCost">Book Cost</label>
+                            <input 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Enter Book Cost" 
+                                id="bCost"
+                                formControlName="bookCost"
+                               >
+                            <div *ngIf="myReactiveForm.get('bookCost')?.invalid && myReactiveForm.get('bookCost')?.touched" class="text-danger small">Book Cost is mandatory!</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bImage">Book Image URL</label>
+                            <input 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Enter Book Image URL" 
+                                id="bImage"
+                                formControlName="bookImageUrl"
+                                >
+                        </div>
+                    </div>
+                    <div class="card-footer bg-primary">
+                        <button 
+                            type="submit" 
+                            class="btn btn-light mr-5 text-primary"
+                            [disabled]="myReactiveForm.invalid">
+                            UPDATE
+                        </button>
+                        <button type="reset" class="btn btn-light text-primary">
+                            CLEAR
+                        </button>           
+                    </div>
+                </div> 
+            </form>
+        </div>
+        <div class="col-3"></div>
+
+    </div>
+
+</div>

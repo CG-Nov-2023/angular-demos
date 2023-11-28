@@ -38,6 +38,10 @@ export class BookService {
     return this.allBooks;
   }
 
+  getABook(bid:number){
+    return this.allBooks.filter((eachBook)=>eachBook.bookId==bid)[0]
+  }
+
   removeBook(bId: number){
     for(let i=0;i<this.allBooks.length;i++){
       if(bId==this.allBooks[i].bookId){
@@ -46,5 +50,16 @@ export class BookService {
         break;
       }
     }
+  }
+
+  updateBook(changedBook: any){
+    for(let i=0;i<this.allBooks.length;i++){
+      if(changedBook.bookId==this.allBooks[i].bookId){
+        console.log("matched");
+        this.allBooks[i] = changedBook;
+        break;
+      }
+    }
+    console.log(this.allBooks);
   }
 }
