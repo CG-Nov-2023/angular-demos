@@ -2,7 +2,7 @@
     <div class="row" #temp1>
         <div class="col-3"></div>
         <div class="col-6">
-            <form (ngSubmit)="addBook(myForm)" #myForm="ngForm">
+            <form (ngSubmit)="addBook(myBookTitle)" #myForm="ngForm">
                 <div class="card">
                     <div class="card-header bg-success text-white">
                         <h2>ADD A BOOK</h2>
@@ -16,7 +16,16 @@
                                 placeholder="Enter Book Title" 
                                 id="bTitle"
                                 name="bkTitle"
+                                required
+                                minlength="3"
+                                #myBookTitle = "ngModel"
                                 [(ngModel)]="newBook.bookTitle">
+                            <!-- <div *ngIf="myBookTitle.invalid && myBookTitle.touched" class="text-danger small">Book Title is Mandatory</div>
+                             -->
+                             <div class="text-danger small" *ngIf="myBookTitle.invalid && myBookTitle.touched">
+                                <div *ngIf="myBookTitle.errors?.['required']">Book Title is Mandatory!</div>
+                                <div *ngIf="myBookTitle.errors?.['minlength']">Book Tille should be minimum 3 characters!</div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="bAuthor">Book Author</label>
@@ -41,7 +50,10 @@
                                 placeholder="Enter Book Cost" 
                                 id="bCost"
                                 name="bkCost"
+                                required
+                                #myBookCost="ngModel"
                                 [(ngModel)]="newBook.bookCost">
+                            <div *ngIf="myBookCost.touched && myBookCost.value==0" class="text-danger small">Book Cost is mandatory!</div>
                         </div>
                         <div class="form-group">
                             <label for="bImage">Book Image URL</label>
@@ -55,10 +67,13 @@
                         </div>
                     </div>
                     <div class="card-footer bg-success">
-                        <button type="submit" class="btn btn-light mr-5 text-success">
+                        <button 
+                            type="submit" 
+                            class="btn btn-light mr-5 text-success">
+                            <!-- [disabled]="myForm.invalid"> -->
                             ADD
                         </button>
-                        <button type="rest" class="btn btn-light text-success">
+                        <button type="reset" class="btn btn-light text-success">
                             CLEAR
                         </button>           
                     </div>
