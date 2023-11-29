@@ -38,7 +38,7 @@ export class BookService {
     return this.allBooks;
   }
 
-  getABook(bid:number){
+  getABook(bid: any){
     return this.allBooks.filter((eachBook)=>eachBook.bookId==bid)[0]
   }
 
@@ -61,5 +61,14 @@ export class BookService {
       }
     }
     console.log(this.allBooks);
+  }
+
+  addBook(newBook: any){
+    newBook.bookId = this.allBooks[this.allBooks.length-1].bookId + 1;
+    this.allBooks.push(newBook);
+
+
+
+
   }
 }

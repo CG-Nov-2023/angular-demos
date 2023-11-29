@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BookService } from '../book.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'book-list',
@@ -11,7 +12,8 @@ export class BookListComponent {
 //@Autowired
 //bookService: BookService | undefined;
 allBooks: any[] = [];
-  constructor(private bookService: BookService){
+  constructor(private bookService: BookService, 
+              private router: Router){
     //this.bookService = bookService;
     
   }
@@ -50,5 +52,19 @@ allBooks: any[] = [];
   deleteBook(bId: number){
     console.log(bId);
     this.bookService.removeBook(bId);
+  }
+
+  editBook(bid: any){
+    // here navigate to book-edit component
+    // we should also send the route parameter
+    this.router.navigate(['book-edit', bid]);
+  }
+
+  addBook(){
+    // here navigate to book-add component
+    // for this we need Router api
+    // inject Router in the constructor of component
+    // and then use router to navigate to book-add
+    this.router.navigate(['book-add']);
   }
 }

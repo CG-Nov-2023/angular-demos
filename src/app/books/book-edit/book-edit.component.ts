@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BookService } from '../book.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'book-edit',
@@ -9,13 +10,20 @@ import { BookService } from '../book.service';
 })
 export class BookEditComponent {
 
-constructor(private bookService: BookService){}
+constructor(private bookService: BookService,
+            private activatedRoute: ActivatedRoute,
+            private router: Router){}
 
 ngOnInit(){
+
   // for now we are harfd coding the value of bookId
   // later this value will come as a route parameter
-  let bookId = 103;
+ // let bookId = 103;
 
+ // to extract route paratmeters, we need ActivatedRoute
+ // so inject ActivatedRoute in this component's constructor
+  let bookId = this.activatedRoute.snapshot.paramMap.get('bid');
+  console.log(bookId);
   let fetchedBook = this.bookService.getABook(bookId);
   this.myReactiveForm.setValue(fetchedBook);
 
@@ -39,5 +47,7 @@ editBook(){
 
   // call updateBook() of bookService
   this.bookService.updateBook(this.myReactiveForm.value);
+
+  this.router.navigate(['book-list']);
 }
 }

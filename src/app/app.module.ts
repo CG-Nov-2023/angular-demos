@@ -16,6 +16,7 @@ import { NgclassDemoComponent } from './ngclass-demo/ngclass-demo.component';
 import { BookAddComponent } from './books/book-add/book-add.component';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { BookViewComponent } from './books/book-view/book-view.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BookViewComponent } from './books/book-view/book-view.component';
     NgclassDemoComponent,
     BookAddComponent,
     BookEditComponent,
-    BookViewComponent
+    BookViewComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

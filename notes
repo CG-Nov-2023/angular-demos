@@ -30,39 +30,6 @@ steps to create a component
 4. dont forget to use the selector of the component
 
 
-https://github.com/CG-Nov-2023/
-
-steps to install angular and create an angular project
-------------------------------------------------------
-1) install nodejs - choose LTS
-2) this will give you npm (node package manager)
-3) using npm we will install angular cli
-4) open a cmd and type the command
-	npm install -g @angular/cli
-5) to confirm if angular is installed type the command
-	ng version
-6) next create a angular project
-	ng new --no-standalone ang-demo
-		Choose CSS	
-		Choose N for server side rendering
-
-steps to create a component
-----------------------------
-1. use the command 
-	ng generate component <component name> 
-	eg.
-		ng generate component display
-        (or)
-        ng g c display
-2. this will create a folder called display in app folder
-     and will create the 4 files
-		display.component.ts
-		display.component.html
-		display.component.css
-		display.component.spec.ts
-3. Also entry of DisplayComponent will be made in app.module.ts file automatically
-4. Dont forget to use the selector of the newly created component
-
 property and event binding
 -------------------------
 1) String Interpolation - {{ }}
@@ -73,4 +40,54 @@ property and event binding
                  - one way binding
 4) Property binding - [(ngModel)]
                     - two way binding
+
+form handling in angular
+--------------------------
+who creates the FormControl object?
+if angular creates it, then you are working with Template Driven Form
+if you create it, then you are working with Reactive Form
+Template Driven Form
+--------------------
+- here coding starts from the template
+- we use [(ngModel)] in the template which creates the FormControl object
+- to capture the FormControl object, we create template variables
+- template variables are variables that can be created on the template. They are prefixed with #
+- these template variables equated to FormControl(ngModel) can be used for displaying error messages in form validation
+Reactive Form
+--------------
+- here coding starts from the ts file
+
+
+Routing in angular
+------------------
+2 ways
+------
+	- use <a href>
+		- when we want the routing to be initiated from the template
+	- use Router api
+		- when we want the routing to be initiated from the component class
+		- is also called programatically navigating
+
+steps in routing
+----------------
+1) configure route paths for your components in app-routing.module.ts file
+2) use <router-outlet> in the place where you want the navigation to place
+3) access the component by using the route path 
+
+
+
+
+let person = {
+	firstName: "John",
+	lastName: "Smith"
+}
+
+console.log(person.firstName);
+console.log(person.lastName);
+
+console.log(person["firstName"]);
+console.log(person["lastName"]);
+
+
+
 
