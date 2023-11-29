@@ -11,7 +11,9 @@ export class BookListComponent {
 
 //@Autowired
 //bookService: BookService | undefined;
+filterString: string = '';
 allBooks: any[] = [];
+filteredBooks: any[] = [];
   constructor(private bookService: BookService, 
               private router: Router){
     //this.bookService = bookService;
@@ -20,6 +22,7 @@ allBooks: any[] = [];
 
   ngOnInit(){
     this.allBooks = this.bookService.getAllBooks();
+    this.filteredBooks = [...this.allBooks];
   }
   // allBooks = [
   //   {
@@ -49,6 +52,13 @@ allBooks: any[] = [];
 
   // ];
 
+  filterBooks(){
+    this.filteredBooks = this.allBooks.filter((eachBook)=>{
+      return eachBook.bookTitle.startsWith(this.filterString)
+    })
+    
+  }
+
   deleteBook(bId: number){
     console.log(bId);
     this.bookService.removeBook(bId);
@@ -67,4 +77,11 @@ allBooks: any[] = [];
     // and then use router to navigate to book-add
     this.router.navigate(['book-add']);
   }
+
+  viewBook(bid: any){
+    // here navigate to book-view
+    this.router.navigate(['book-view', bid]);
+
+  }
+
 }

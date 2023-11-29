@@ -9,8 +9,10 @@ import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { BookListComponent } from './books/book-list/book-list.component';
 import { BookAddComponent } from './books/book-add/book-add.component';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
+import { BookViewComponent } from './books/book-view/book-view.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'book-list', pathMatch: 'full'},
   { path: 'counter', component: CounterComponent },
   { path: 'display', component: DisplayComponent },
   { path: 'ngclass-demo', component: NgclassDemoComponent },
@@ -20,6 +22,7 @@ const routes: Routes = [
   { path: 'book-list', component: BookListComponent },
   { path: 'book-add', component: BookAddComponent },
   { path: 'book-edit/:bid', component: BookEditComponent},
+  { path: 'book-view/:bookId', component: BookViewComponent},
 ];
 
 @NgModule({
