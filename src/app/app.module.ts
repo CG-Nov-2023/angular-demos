@@ -17,6 +17,11 @@ import { BookAddComponent } from './books/book-add/book-add.component';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { BookViewComponent } from './books/book-view/book-view.component';
 import { HeaderComponent } from './header/header.component';
+import { BookListHttpComponent } from './books-http/book-list-http/book-list-http.component';
+import { BookAddHttpComponent } from './books-http/book-add-http/book-add-http.component';
+import { BookEditHttpComponent } from './books-http/book-edit-http/book-edit-http.component';
+import { BookViewHttpComponent } from './books-http/book-view-http/book-view-http.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,13 +38,18 @@ import { HeaderComponent } from './header/header.component';
     BookAddComponent,
     BookEditComponent,
     BookViewComponent,
-    HeaderComponent
+    HeaderComponent,
+    BookListHttpComponent,
+    BookAddHttpComponent,
+    BookEditHttpComponent,
+    BookViewHttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

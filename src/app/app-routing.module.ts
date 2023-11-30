@@ -10,6 +10,10 @@ import { BookListComponent } from './books/book-list/book-list.component';
 import { BookAddComponent } from './books/book-add/book-add.component';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { BookViewComponent } from './books/book-view/book-view.component';
+import { BookListHttpComponent } from './books-http/book-list-http/book-list-http.component';
+import { BookAddHttpComponent } from './books-http/book-add-http/book-add-http.component';
+import { BookEditHttpComponent } from './books-http/book-edit-http/book-edit-http.component';
+import { BookViewHttpComponent } from './books-http/book-view-http/book-view-http.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'book-list', pathMatch: 'full'},
@@ -23,6 +27,10 @@ const routes: Routes = [
   { path: 'book-add', component: BookAddComponent },
   { path: 'book-edit/:bid', component: BookEditComponent},
   { path: 'book-view/:bookId', component: BookViewComponent},
+  { path: 'book-list-http', component: BookListHttpComponent },
+  { path: 'book-add-http', component: BookAddHttpComponent },
+  { path: 'book-edit-http/:bid', component: BookEditHttpComponent},
+  { path: 'book-view-http/:bookId', component: BookViewHttpComponent},
 ];
 
 @NgModule({

@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="row" #temp1>
+        <div class="col-3"></div>
+        <div class="col-6">
+            <form (ngSubmit)="addBook(myBookTitle)" #myForm="ngForm">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h2>ADD A BOOK</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="bTitle">Book Title</label>
+                            <input 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Enter Book Title" 
+                                id="bTitle"
+                                name="bkTitle"
+                                required
+                                minlength="3"
+                                #myBookTitle = "ngModel"
+                                [(ngModel)]="newBook.bookTitle">
+                            <!-- <div *ngIf="myBookTitle.invalid && myBookTitle.touched" class="text-danger small">Book Title is Mandatory</div>
+                             -->
+                             <div class="text-danger small" *ngIf="myBookTitle.invalid && myBookTitle.touched">
+                                <div *ngIf="myBookTitle.errors?.['required']">Book Title is Mandatory!</div>
+                                <div *ngIf="myBookTitle.errors?.['minlength']">Book Tille should be minimum 3 characters!</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bAuthor">Book Author</label>
+                            <select class="form-control" id="bAuthor" name="bkAuthor" [(ngModel)]="newBook.bookAuthor">
+                                <option value="J.K.Rowling">J.K.Rowling</option>
+                                <option value="Geronimo Stilton">Geronimo Stilton</option>
+                                <option value="Enid Blyton">Enid Blyton</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bGenre">Book Genre</label>
+                            <select class="form-control" id="bGenre" name="bkGenre" [(ngModel)]="newBook.bookGenre">
+                                <option value="Fiction">Fiction</option>
+                                <option value="Comedy">Comedy</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bCost">Book Cost</label>
+                            <input 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Enter Book Cost" 
+                                id="bCost"
+                                name="bkCost"
+                                required
+                                #myBookCost="ngModel"
+                                [(ngModel)]="newBook.bookCost">
+                            <div *ngIf="myBookCost.touched && myBookCost.value==0" class="text-danger small">Book Cost is mandatory!</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bImage">Book Image URL</label>
+                            <input 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Enter Book Image URL" 
+                                id="bImage"
+                                name="bkImageUrl"
+                                [(ngModel)]="newBook.bookImageUrl">
+                        </div>
+                    </div>
+                    <div class="card-footer bg-success">
+                        <button 
+                            type="submit" 
+                            class="btn btn-light mr-5 text-success"
+                            [disabled]="myForm.invalid">
+                            ADD
+                        </button>
+                        <button type="reset" class="btn btn-light text-success">
+                            CLEAR
+                        </button>           
+                    </div>
+                </div> 
+            </form>
+        </div>
+        <div class="col-3"></div>
+
+    </div>
+
+</div>
