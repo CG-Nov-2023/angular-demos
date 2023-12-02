@@ -50,7 +50,7 @@ filteredBooks: any[] = [];
   }
 
   viewBook(bid: any){
-    this.router.navigate(['book-view', bid]);
+    this.router.navigate(['book-view-http', bid]);
   }
 
 }
