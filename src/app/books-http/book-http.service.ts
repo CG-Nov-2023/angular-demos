@@ -36,6 +36,7 @@ export class BookHttpService {
     
   }
   
-  addBook(newBook: any){
+  addBook(newBook: any): Observable<any>{
+    return this.httpClient.post<any>(this.baseUrl, newBook);
   }
 }

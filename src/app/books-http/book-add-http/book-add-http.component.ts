@@ -20,7 +20,10 @@ export class BookAddHttpComponent {
   constructor(private bookHttpService: BookHttpService, private router:Router){}
 
   addBook(myForm: any){
-    //this.bookHttpService.addBook(this.newBook);
+
+    // here we should sedn the form data to the back end to get inserted in DB
+
+    
     this.router.navigate(['book-list']);
   }
 }
