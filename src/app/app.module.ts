@@ -23,6 +23,7 @@ import { BookEditHttpComponent } from './books-http/book-edit-http/book-edit-htt
 import { BookViewHttpComponent } from './books-http/book-view-http/book-view-http.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserLoginComponent } from './users-http/user-login/user-login.component';
+import { UserLogoutComponent } from './users-http/user-logout/user-logout.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { UserLoginComponent } from './users-http/user-login/user-login.component
     BookAddHttpComponent,
     BookEditHttpComponent,
     BookViewHttpComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    UserLogoutComponent
   ],
   imports: [
     BrowserModule,

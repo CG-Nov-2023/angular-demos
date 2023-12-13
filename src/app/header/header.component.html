@@ -3,25 +3,32 @@
     <!-- Links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" routerLink="display">Display Component</a>
+        <a class="nav-link" routerLink="display" *ngIf="isLoggedIn()&&getRole()=='CUSTOMER'">Display Component</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="rainbow-color">Rainbow Color Component</a>
+        <a class="nav-link" routerLink="rainbow-color" *ngIf="isLoggedIn()&&getRole()=='CUSTOMER'">Rainbow Color Component</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="to-do-list">TODO Component</a>
+        <a class="nav-link" routerLink="to-do-list" *ngIf="isLoggedIn()&&getRole()=='CUSTOMER'">TODO Component</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="book-list">Book List Component</a>
+        <a class="nav-link" routerLink="book-list" *ngIf="isLoggedIn()&&getRole()=='ADMIN'">Book List Component</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="pipes-demo">Pipes Demo Component</a>
+        <a class="nav-link" routerLink="pipes-demo" *ngIf="isLoggedIn()&&getRole()=='CUSTOMER'">Pipes Demo Component</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="counter">Counter Component</a>
+        <a class="nav-link" routerLink="counter" *ngIf="isLoggedIn()&&getRole()=='CUSTOMER'">Counter Component</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="book-list-http">BookListHttp Component</a>
+        <a class="nav-link" routerLink="book-list-http" *ngIf="isLoggedIn()&&getRole()=='ADMIN'">
+          BookListHttp Component</a>
+      </li>
+      <li class="nav-item" *ngIf="!isLoggedIn()">
+        <a class="nav-link" routerLink="login">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn()">
+        <a class="nav-link" routerLink="logout">Logout</a>
       </li>
     </ul>
   </nav>
