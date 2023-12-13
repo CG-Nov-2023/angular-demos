@@ -14,9 +14,11 @@ import { BookListHttpComponent } from './books-http/book-list-http/book-list-htt
 import { BookAddHttpComponent } from './books-http/book-add-http/book-add-http.component';
 import { BookEditHttpComponent } from './books-http/book-edit-http/book-edit-http.component';
 import { BookViewHttpComponent } from './books-http/book-view-http/book-view-http.component';
+import { UserLoginComponent } from './users-http/user-login/user-login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'book-list', pathMatch: 'full'},
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: 'login', component: UserLoginComponent },
   { path: 'counter', component: CounterComponent },
   { path: 'display', component: DisplayComponent },
   { path: 'ngclass-demo', component: NgclassDemoComponent },

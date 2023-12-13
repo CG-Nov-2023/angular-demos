@@ -22,6 +22,7 @@ import { BookAddHttpComponent } from './books-http/book-add-http/book-add-http.c
 import { BookEditHttpComponent } from './books-http/book-edit-http/book-edit-http.component';
 import { BookViewHttpComponent } from './books-http/book-view-http/book-view-http.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserLoginComponent } from './users-http/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     BookListHttpComponent,
     BookAddHttpComponent,
     BookEditHttpComponent,
-    BookViewHttpComponent
+    BookViewHttpComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
