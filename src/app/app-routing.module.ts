@@ -16,25 +16,26 @@ import { BookEditHttpComponent } from './books-http/book-edit-http/book-edit-htt
 import { BookViewHttpComponent } from './books-http/book-view-http/book-view-http.component';
 import { UserLoginComponent } from './users-http/user-login/user-login.component';
 import { UserLogoutComponent } from './users-http/user-logout/user-logout.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: UserLoginComponent },
   { path: 'logout', component: UserLogoutComponent },
-  { path: 'counter', component: CounterComponent },
-  { path: 'display', component: DisplayComponent },
-  { path: 'ngclass-demo', component: NgclassDemoComponent },
-  { path: 'pipes-demo', component: PipesDemoComponent },
-  { path: 'rainbow-color', component: RainbowColorComponent },
-  { path: 'to-do-list', component: ToDoListComponent },
-  { path: 'book-list', component: BookListComponent },
-  { path: 'book-add', component: BookAddComponent },
-  { path: 'book-edit/:bid', component: BookEditComponent},
-  { path: 'book-view/:bookId', component: BookViewComponent},
-  { path: 'book-list-http', component: BookListHttpComponent },
-  { path: 'book-add-http', component: BookAddHttpComponent },
-  { path: 'book-edit-http/:bid', component: BookEditHttpComponent},
-  { path: 'book-view-http/:bookId', component: BookViewHttpComponent},
+  { path: 'counter', component: CounterComponent, canActivate: [LoginGuard] },
+  { path: 'display', component: DisplayComponent, canActivate: [LoginGuard]  },
+  { path: 'ngclass-demo', component: NgclassDemoComponent, canActivate: [LoginGuard]  },
+  { path: 'pipes-demo', component: PipesDemoComponent, canActivate: [LoginGuard] },
+  { path: 'rainbow-color', component: RainbowColorComponent , canActivate: [LoginGuard] },
+  { path: 'to-do-list', component: ToDoListComponent , canActivate: [LoginGuard] },
+  { path: 'book-list', component: BookListComponent, canActivate: [LoginGuard]  },
+  { path: 'book-add', component: BookAddComponent , canActivate: [LoginGuard] },
+  { path: 'book-edit/:bid', component: BookEditComponent, canActivate: [LoginGuard] },
+  { path: 'book-view/:bookId', component: BookViewComponent, canActivate: [LoginGuard] },
+  { path: 'book-list-http', component: BookListHttpComponent, canActivate: [LoginGuard]  },
+  { path: 'book-add-http', component: BookAddHttpComponent , canActivate: [LoginGuard] },
+  { path: 'book-edit-http/:bid', component: BookEditHttpComponent, canActivate: [LoginGuard] },
+  { path: 'book-view-http/:bookId', component: BookViewHttpComponent, canActivate: [LoginGuard] },
 ];
 
 @NgModule({

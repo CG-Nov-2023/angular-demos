@@ -32,8 +32,9 @@ export class UserLoginComponent {
         // means user name and password is correct
         console.log(response);
         // store the response (user object) in sessionStorage
-        this.authService.storeUser(response);
+        this.authService.storeUser(response.user);
         this.authService.isLoggedIn = true;
+        this.authService.storeToken(response.token)
         this.router.navigate(['display']);
       },
       (error)=>{

@@ -26,5 +26,19 @@ export class AuthService {
     sessionStorage.removeItem("userInfo");
   }
 
+  storeToken(token: string){
+    // store the user object in the session storage
+    sessionStorage.setItem("tokenInfo", token);
+  }
+
+  retrieveToken(){
+      let token: any = sessionStorage.getItem("tokenInfo");
+      return token;
+  }
+
+  removeToken(){
+    sessionStorage.removeItem("tokenInfo");
+  }
+
 
 }
